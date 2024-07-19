@@ -9,6 +9,9 @@ export default async function Home() {
   console.log(result)
 
   return (
-    <div>테스트중입니다.</div>
+    <div>테스트중입니다.
+      
+    </div>
+    
   )
 }
