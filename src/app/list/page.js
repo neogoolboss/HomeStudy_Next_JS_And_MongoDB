@@ -24,7 +24,8 @@ export default async function List() {
         <div className="list-item" key={index}>
             <Link href={`/detail/${post._id}`}><h4>{post.title}</h4></Link>
             <p>{post.content}</p>
-            <DetailLink/>
+            {/* <DetailLink/> */}
+            <Link href={'/edit/' + post._id}>✏</Link>
         </div>
       ))}
     </div>
