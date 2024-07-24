@@ -3,11 +3,10 @@
 import Link from "next/link"
 import { useEffect } from "react"
 
+
 export default function ListItem({result}) {
 
     // useEffect(() => {
-
-
 
     // },[])
 
@@ -20,7 +19,7 @@ export default function ListItem({result}) {
                     {/* <p>{post.content}</p> */}
                     {/* <DetailLink/> */}
                     <Link href={'/edit/' + post._id}>✏</Link>
-                    <span onClick={() => {
+                    <span onClick={(e) => {
                         fetch('/api/post/delete', {method : 'DELETE', body : post._id })
                         .then((r) => {
                             if(r.status == 200) {
@@ -30,10 +29,15 @@ export default function ListItem({result}) {
                             }
                         })
                         .then((result) => {
-                            // 성공 시 실행할 코드
+                            e.target.parentElement.style.opacity = 0;
+                            setTimeout(() => {
+                                e.target.parentElement.style.display = 'none'; 
+                            }, 1000)
                         }).catch((error) => {
                             //인터넷 문제로 실패 시 실행할 코드
                         });
+
+                        // fetch('/api/abc/어쩌구')
                     }}>🗑</span>
                     <p>1월 1일</p>
                 </div>
