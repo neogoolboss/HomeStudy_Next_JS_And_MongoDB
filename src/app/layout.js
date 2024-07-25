@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
         <div className="navbar">
           <Link href="/" className="logo">Appleforum</Link>
           <Link href='/list'>List</Link>
+          <Link herf='/write'>Write</Link>
         </div>
           {children}
         </body>
