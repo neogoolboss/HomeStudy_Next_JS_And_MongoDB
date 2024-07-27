@@ -25,7 +25,7 @@ export default function ListItem({result}) {
                             if(r.status == 200) {
                                 return r.json()
                             } else {
-                                // 서버가 에러 코드 전송 시 실행할 코드
+                                throw new Error('Server responded with an error status: ' + r.status);
                             }
                         })
                         .then((result) => {
