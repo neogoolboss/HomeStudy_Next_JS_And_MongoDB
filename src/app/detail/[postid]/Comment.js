@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
+import Loading from '../../loading';
 
 export default function Comment(props) {
 
@@ -23,7 +24,7 @@ export default function Comment(props) {
                 return(
                     <p key={i}>{a.content}</p>
                 ) 
-            }) : '댓글 없음 '}
+            }) : <Loading />}
             <input onChange={(e) => { setComment(e.target.value) }}/>
             <button onClick={() => {
                 // console.log(comment);
